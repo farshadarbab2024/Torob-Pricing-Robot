@@ -1,12 +1,11 @@
-// color1:#E91E33 ; 
-// color2: #34afce;
-
 import type { ThemeConfig } from "antd";
 
 const theme: ThemeConfig = {
     token: {
         colorPrimary: "#E91E33",
-        colorTextPlaceholder: "#828282", 
+        colorTextPlaceholder: "#828282",
+        colorError: "#fa6900",  
+        colorTextBase: "#1d1d1d", 
     },
 }
 

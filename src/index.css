@@ -61,7 +61,20 @@
     box-sizing: border-box ; 
 }
 
+:root{
+    --main-red: #E91E33 ;
+    --main-blue: #34afce ;
+    --shadow1: -5px_-5px_20px_rgba(0,0,0,0.17) ;
+    --secondary: #616161 ;
+    --secondary2: #e8e8e8 ;
+}
+
 @theme{
-    --color-main-red: #E91E33 ;
-    --color-main-blue: #34afce ;
+    --color-main-red: #E91E33 ; /* the main red in the project */
+    --color-main-blue: #34afce ; /* the main blue in the project */
+    --shadow-shadow1: -5px_-5px_20px_rgba(0,0,0,0.17) ;
+    --color-secondary2: #e8e8e8 ; /*  lightest */
+    --color-secondary: #868686 ; /* not very light */
+    --color-highest-black: #1d1d1d ; /* darkest color */
+    --color-main-red-hover: #b50012 ; /* buttons when hover */
 }

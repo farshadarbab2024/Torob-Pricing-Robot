@@ -1,18 +1,16 @@
-import "./App.css";
-import Auth from "./pages/Auth";
 import React from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Panel from "./pages/Panel";
-import LaunchRobot from "./pages/LaunchRobot";
+import router from "./router/main";
+import { ConfigProvider } from "antd";
+import { RouterProvider } from "react-router-dom";
+import theme from "./theme/ThemeConfig" ; 
 function App() {
   return (
-      <BrowserRouter>
-        <Routes>
-          <Route element={<Auth />} path="/auth" />
-          <Route element={<Panel />} path="/panel" />
-          <Route element={<LaunchRobot />} path="launch/robot" />
-        </Routes>
-      </BrowserRouter>
+    <ConfigProvider 
+    direction="ltr"
+    theme={theme}
+    >
+      <RouterProvider router={router} />
+    </ConfigProvider>
   );
 }
 
