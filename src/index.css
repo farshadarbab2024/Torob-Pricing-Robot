@@ -75,6 +75,8 @@
     --shadow-shadow1: -5px_-5px_20px_rgba(0,0,0,0.17) ;
     --color-secondary2: #e8e8e8 ; /*  lightest */
     --color-secondary: #868686 ; /* not very light */
+    --color-secondary3: #5d5d5d ;
     --color-highest-black: #1d1d1d ; /* darkest color */
     --color-main-red-hover: #b50012 ; /* buttons when hover */
+    --color-main-red-light: #ffe2e5 ;
 }

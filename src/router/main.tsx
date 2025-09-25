@@ -4,6 +4,7 @@ import Login from "../pages/Login"
 import Signup from "../pages/Signup" ; 
 import LaunchRobot from "../pages/LaunchRobot" ; 
 import Panel from "../pages/Panel";
+import NotFound from "../pages/NotFound";
 const router = createBrowserRouter([
     {
         path: "/login", 
@@ -20,6 +21,10 @@ const router = createBrowserRouter([
     {
         path: "/panel", 
         element: <Panel />
+    }, 
+    {
+        path: "*", 
+        element: <NotFound />
     }
 
 ]) ; 
