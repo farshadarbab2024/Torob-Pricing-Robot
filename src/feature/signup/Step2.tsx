@@ -5,19 +5,18 @@ import { Statistic } from "antd";
 import Auth from "../../services/Auth";
 import useMessage from "antd/es/message/useMessage";
 import { IoArrowBack } from "react-icons/io5";
-import { useNavigate } from "react-router-dom" ; 
+import { useNavigate } from "react-router-dom";
 
 const { Timer } = Statistic;
 
-
 function Step2({
-  step, 
+  step,
   setStep,
 }: {
-  step: any, 
+  step: any;
   setStep: React.Dispatch<React.SetStateAction<number>>;
 }) {
-  const navigator = useNavigate() ; 
+  const navigator = useNavigate();
   const resendTime = 60; // How long wait user for resend code //ntch change it to 60
 
   const [otp, setOtp] = useState("");
@@ -29,12 +28,13 @@ function Step2({
     useState<boolean>(false);
   const [timer, setTimer] = useState<number>(Date.now() + resendTime * 1000);
   const [resendCodeButtonLoading, setResendCodeButtonLoading] = useState(false);
-  const [verifyEmailButtonLoading, setVerifyEmailButtonLoading] = useState(false) ;
-  
+  const [verifyEmailButtonLoading, setVerifyEmailButtonLoading] =
+    useState(false);
+
   // reset time when user go to next step
   useEffect(() => {
-    setTimer(Date.now() + resendTime * 1000) ; 
-  }, [step]) ; 
+    setTimer(Date.now() + resendTime * 1000);
+  }, [step]);
 
   const handleResendCodeClicked = () => {
     setResendCodeButtonLoading(true);
@@ -53,27 +53,30 @@ function Step2({
   };
 
   const handleVerifyEmail = () => {
-    setVerifyEmailButtonLoading(true) ; 
+    setVerifyEmailButtonLoading(true);
 
     const data = {
-      "code": otp, 
-    } ;
+      code: otp,
+    };
 
-    Auth.verfiyEmail(data)
-      .then(() => {
-        setVerifyEmailButtonLoading(false) ; 
-        navigator("/panel") ; 
-      })
-      .catch((error) => {
-        if(error?.response?.data?.message){
-          messageApi.error(error.response.data.message) ;
-        }else{
-          messageApi.error("Email verification failed")
-        }
-        setVerifyEmailButtonLoading(false) ; 
-      }) ;
+    // Auth.verfiyEmail(data)
+    //   .then(() => {
+    //     setVerifyEmailButtonLoading(false) ;
+    //     navigator("/panel") ;
+    //   })
+    //   .catch((error) => {
+    //     if(error?.response?.data?.message){
+    //       messageApi.error(error.response.data.message) ;
+    //     }else{
+    //       messageApi.error("Email verification failed")
+    //     }
+    //     setVerifyEmailButtonLoading(false) ;
+    //   }) ; //ntdelete
 
-  }
+    setTimeout(() => {
+      navigator("/panel");
+    }, 1000);
+  };
 
   return (
     <div
@@ -87,14 +90,17 @@ function Step2({
       {contextHolder}
 
       {/* Back Icon */}
-      <div className="absolute left-0 top-0 !pl-[25px] !pt-[25px] !pb-[10px] !pr-[10px]
+      <div
+        className="absolute left-0 top-0 !pl-[25px] !pt-[25px] !pb-[10px] !pr-[10px]
       cursor-pointer"
-      onClick={() => setStep(prev => prev - 1)}
+        onClick={() => setStep((prev) => prev - 1)}
       >
         <IoArrowBack className="text-2xl !text-highest-black" />
       </div>
 
-      <h2 className="font-extrabold text-2xl text-highest-black">Email Confirmation</h2>
+      <h2 className="font-extrabold text-2xl text-highest-black">
+        Email Confirmation
+      </h2>
       <p className="text-center text-secondary !mt-1 text-base">
         Enter the code we sent to your email
       </p>

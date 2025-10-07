@@ -20,6 +20,16 @@ class Auth extends BaseApiService {
   public static login(data: { email: string; password: string }) {
     return this.post("/auth/login", data);
   }
+
+  public static logout(){
+    return this.post(`/auth/logout`) ; 
+  }
+
+  public static Me(){
+    return {
+      token: ""
+    } 
+  }
 }
 
 export default Auth;

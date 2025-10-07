@@ -8,13 +8,14 @@ import {
   Select,
   Steps,
 } from "antd";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 function LaunchRobot() {
   const numberOfSteps = 5;
   const [currentStep, setCurrentStep] = useState(0);
   const [launchForm] = Form.useForm();
   const [messageApi, contextHolder] = message.useMessage();
+  const navigator = useNavigate() ; 
 
   let steps: any[] = [];
   for (let i = 0; i < numberOfSteps; i++) {
@@ -38,6 +39,8 @@ function LaunchRobot() {
       case 3:
         permission = validateConsumerKeyAndConsumerSecret();
         break;
+      case 4:
+        navigator("/panel") ; 
 
       default:
         permission = true;

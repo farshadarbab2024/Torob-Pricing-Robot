@@ -24,6 +24,8 @@ function Step1({
   const navigate = useNavigate();
   const [messageApi, contextHolder] = message.useMessage();
   const [loading, setLoading] = useState<boolean>(false);
+  const baseUrl = import.meta.env.VITE_APP_BASE_URL ;
+  const navigator = useNavigate() ; 
   const schema = z
     .object({
       email: z.email({ message: "Please enter a valid email address" }),
@@ -69,8 +71,8 @@ function Step1({
 
     Auth.register(mainData)
       .then((response) => {
-        const token = (response?.data as any).data.token || null;
-        localStorage.setItem("token", token);
+        // const token = (response?.data as any).data.token || null;
+        // localStorage.setItem("token", token); //ntdelete
         setLoading(false);
         setStep(2);
       })
@@ -98,6 +100,11 @@ function Step1({
     },
   });
 
+  const handleGoogleSignup = () => {
+    const address = baseUrl + "/auth/google/redirect" ;
+    window.location.href = address ; 
+  }
+
   return (
     <div
       className="bg-white w-screen h-[85.5vh] md:w-1/2 md:h-screen lg:h-full
@@ -120,7 +127,7 @@ function Step1({
         <Button
           className="!flex !items-center !justify-center gap-x-2 !mx-auto
           !text-lg !w-full !h-15 !mt-4"
-          onClick={() => googleLogin()}
+          onClick={handleGoogleSignup}
         >
           <FcGoogle />
           Sign Up With Google

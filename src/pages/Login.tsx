@@ -52,7 +52,7 @@ function Login() {
     };
 
     Auth.login(mainData)
-      .then(() => {
+      .then((response) => {
         navigate("/panel");
         setLoading(false);
       })
