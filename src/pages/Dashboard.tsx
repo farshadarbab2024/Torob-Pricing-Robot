@@ -34,7 +34,6 @@ function Dashboard() {
   const [robotStatus, setRobotStatus] = useState(false);
   const [robotStatusLoading, setRobotStatusLoading] = useState(false);
   const [timeHeight, setTimeHeight] = useState(0);
-  const [timeLineColor, setTimeLineColor] = useState("var(--main-blue)");
   const [isChangePriceSuccessfull, setIsChangePriceSuccessfull] =
     useState<boolean>(false);
   const periodTime = 30;
@@ -249,6 +248,7 @@ function Dashboard() {
 
       <hr className="border-[#B2B2B2] !mt-4" />
 
+      {/* Products */}
       <InfiniteScroll
         dataLength={products.length}
         next={getProducts}
