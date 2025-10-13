@@ -9,6 +9,7 @@ import { RiEdit2Fill } from "react-icons/ri";
 import { RxCross2 } from "react-icons/rx";
 import Lottie from "lottie-react";
 import live from "../assets/animation/live.json";
+import FetchProduct from "../feature/public/FetchProducts";
 const { Search } = Input;
 
 interface Product {
@@ -38,6 +39,10 @@ function Dashboard() {
     useState<boolean>(false);
   const periodTime = 30;
   const [deadline, setDeadline] = useState(Date.now() + 1000 * periodTime);
+  const [fetchingStatus, setFetchingStatus] = useState<
+    "noStatus" | "error" | "success" | "fetching"
+  >("noStatus");
+  const [fetchingProductsLoading, setFetchingProductsLoading] = useState<boolean>(false) ; 
 
   const setState = (productId: number, stateName: any, stateValue: any) => {
     setProductStates((prev) => ({
@@ -157,6 +162,14 @@ function Dashboard() {
       setDeadline(Date.now() + 1000 * periodTime);
     }, 2000);
   };
+
+  const handleFetchProductsButtonClicked = () => {
+    setFetchingProductsLoading(true) ; 
+    setTimeout(() => {
+      setFetchingStatus("fetching");
+      setFetchingProductsLoading(false) ; 
+    }, 1000);
+  };
   return (
     <div
       className="bg-white w-[1000px] max-w-[95%] min-h-[90vh] !mx-auto
@@ -165,6 +178,11 @@ function Dashboard() {
       {contextHolder}
       <h1 className="text-center font-bold text-[27px]">Panel</h1>
 
+      <FetchProduct
+        fetchingStatus={fetchingStatus}
+        setFetchingStatus={setFetchingStatus}
+        fetchingProductsLoading={fetchingProductsLoading}
+      />
       {/* Navbar */}
       <div
         className="w-full flex items-center justify-between
@@ -220,7 +238,11 @@ function Dashboard() {
             />
           </ConfigProvider>
         </div>
-        <Button className="!bg-main-red !text-white !font-medium !h-[40px]">
+        <Button
+          className="!bg-main-red !text-white !font-medium !h-[40px]"
+          loading={fetchingProductsLoading ? true : false}
+          onClick={handleFetchProductsButtonClicked}
+        >
           <HiRefresh className="!text-[16px]" /> Update Products
         </Button>
       </div>
