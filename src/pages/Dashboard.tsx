@@ -253,7 +253,7 @@ function Dashboard() {
         dataLength={products.length}
         next={getProducts}
         hasMore={hasMore}
-        loader={<span>Loading...</span>}
+        loader={<span className="!mt-4 block">Loading...</span>}
         style={{ overflow: "visible" }}
       >
         {products.map((product, index: number) => {
