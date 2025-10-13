@@ -23,7 +23,7 @@ interface Product {
   image: string;
 }
 
-const { Timer } = Statistic ;
+const { Timer } = Statistic;
 
 function Dashboard() {
   const [products, setProducts] = useState<Product[]>([]);
@@ -33,10 +33,11 @@ function Dashboard() {
   const [robotStatus, setRobotStatus] = useState(false);
   const [robotStatusLoading, setRobotStatusLoading] = useState(false);
   const [timeHeight, setTimeHeight] = useState(0);
-  const [timeLineColor, setTimeLineColor] = useState("var(--main-blue)") ; 
-  const [isChangePriceSuccessfull, setIsChangePriceSuccessfull] = useState<boolean>(false) ; 
-  const periodTime = 30 ; 
-  const [deadline, setDeadline] = useState(Date.now() + 1000 * periodTime) ; 
+  const [timeLineColor, setTimeLineColor] = useState("var(--main-blue)");
+  const [isChangePriceSuccessfull, setIsChangePriceSuccessfull] =
+    useState<boolean>(false);
+  const periodTime = 30;
+  const [deadline, setDeadline] = useState(Date.now() + 1000 * periodTime);
 
   const setState = (productId: number, stateName: any, stateValue: any) => {
     setProductStates((prev) => ({
@@ -143,19 +144,19 @@ function Dashboard() {
     setTimeout(() => {
       if (timeHeight < 170) {
         setTimeHeight((prev) => prev + 1);
-      }else{
+      } else {
       }
     }, periodTime * (90 / 17));
   }, [timeHeight]);
 
   const handleWaitEnds = () => {
-    setIsChangePriceSuccessfull(true) ; 
+    setIsChangePriceSuccessfull(true);
     setTimeout(() => {
-      setTimeHeight(0) ; 
-      setIsChangePriceSuccessfull(false) ; 
-      setDeadline(Date.now() + 1000 * periodTime) ; 
-    }, 2000) ;
-  }
+      setTimeHeight(0);
+      setIsChangePriceSuccessfull(false);
+      setDeadline(Date.now() + 1000 * periodTime);
+    }, 2000);
+  };
   return (
     <div
       className="bg-white w-[1000px] max-w-[95%] min-h-[90vh] !mx-auto
@@ -260,34 +261,43 @@ function Dashboard() {
               }}
             >
               <div
-                className="absolute top-0 left-0 bg-white/90 w-[2px] h-[170px] rounded-tr-[50%]
+                className="absolute top-0 left-0 bg-[#f5f5f5]/90 w-[2px] h-[170px] rounded-tr-[50%]
               rounded-br-[50%] group-hover:w-[85px] transition-all duration-300"
-              style={{
-                display: robotStatus ? "block" : "none", 
-              }}
+                style={{
+                  display: robotStatus ? "block" : "none",
+                }}
               >
                 <div
                   className="bg-main-blue w-[2px] absolute left-0 top-0"
                   style={{
                     height: timeHeight,
-                    backgroundColor: isChangePriceSuccessfull ? "var(--success-green)" : "var(--main-blue)",
-                    boxShadow: isChangePriceSuccessfull ? "0px 0px 5px var(--success-green)" : "none", 
-                    
+                    backgroundColor: isChangePriceSuccessfull
+                      ? "var(--success-green)"
+                      : "var(--main-blue)",
+                    boxShadow: isChangePriceSuccessfull
+                      ? "0px 0px 5px var(--success-green)"
+                      : "none",
                   }}
                 ></div>
                 <span
-                className="text-[25px] absolute top-1/2 right-1/2 translate-x-1/2 -translate-y-1/2
+                  className="text-[25px] absolute top-1/2 right-1/2 translate-x-1/2 -translate-y-1/2
                 text-[#1F1F1F] opacity-0 group-hover:opacity-100 transition duration-500"
                 >
-                  {
-                    isChangePriceSuccessfull ? <CheckOutlined className="!text-success-green" /> : <Timer type="countdown" value={deadline} onFinish={handleWaitEnds} format="mm:ss"
-                    valueStyle={{
-                      fontSize: "18px", 
-                      fontWeight: "semibold", 
-                    }}
-                    /> 
-                  }
-                  </span>
+                  {isChangePriceSuccessfull ? (
+                    <CheckOutlined className="!text-success-green" />
+                  ) : (
+                    <Timer
+                      type="countdown"
+                      value={deadline}
+                      onFinish={handleWaitEnds}
+                      format="mm:ss"
+                      valueStyle={{
+                        fontSize: "18px",
+                        fontWeight: "semibold",
+                      }}
+                    />
+                  )}
+                </span>
               </div>
               <img
                 src={product.image}
