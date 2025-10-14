@@ -3,11 +3,12 @@ import React from "react";
 import Login from "../pages/Login";
 import Signup from "../pages/Signup";
 import LaunchRobot from "../pages/LaunchRobot";
-import Dashboard from "../pages/Dashboard";
+import Dashboard from "../pages/panel/Dashboard";
 import NotFound from "../pages/NotFound";
 import DesktopPanel from "../Layout/DesktopPanel";
 import { redirect } from "react-router-dom";
 import Auth from "../services/Auth";
+import Settings from "../pages/panel/Settings";
 const loginCheck = async () => {
   try {
     const response = await Auth.Me();
@@ -46,6 +47,10 @@ const router = createBrowserRouter([
       {
         path: "dashboard/",
         element: <Dashboard />,
+      },
+      {
+        path: "settings",
+        element: <Settings />,
       },
     ],
   },

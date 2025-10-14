@@ -3,13 +3,13 @@ import { Button, ConfigProvider, Input, message, Spin, Statistic } from "antd";
 import { CheckOutlined } from "@ant-design/icons";
 import { IoCloseCircle, IoSearch } from "react-icons/io5";
 import { HiRefresh } from "react-icons/hi";
-import Products from "../services/Products";
+import Products from "../../services/Products";
 import InfiniteScroll from "react-infinite-scroll-component";
 import { RiEdit2Fill } from "react-icons/ri";
 import { RxCross2 } from "react-icons/rx";
 import Lottie from "lottie-react";
-import live from "../assets/animation/live.json";
-import FetchProduct from "../feature/public/FetchProducts";
+import live from "../../assets/animation/live.json";
+import FetchProduct from "../../feature/public/FetchProducts";
 const { Search } = Input;
 
 interface Product {
