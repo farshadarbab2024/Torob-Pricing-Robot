@@ -31,7 +31,6 @@ function Dashboard() {
   const [hasMore, setHasMore] = useState<boolean>(true);
   const [productStates, setProductStates] = useState({});
   const [messageApi, contextHolder] = message.useMessage();
-  const [robotStatus, setRobotStatus] = useState(false);
   const [robotStatusLoading, setRobotStatusLoading] = useState(false);
   const [timeHeight, setTimeHeight] = useState(0);
   const [isChangePriceSuccessfull, setIsChangePriceSuccessfull] =
@@ -42,7 +41,7 @@ function Dashboard() {
     "noStatus" | "error" | "success" | "fetching"
   >("noStatus");
   const [fetchingProductsLoading, setFetchingProductsLoading] = useState<boolean>(false) ; 
-
+  const [robotStatus, setRobotStatus] = useState() ; 
   const setState = (productId: number, stateName: any, stateValue: any) => {
     setProductStates((prev) => ({
       ...prev,
@@ -139,7 +138,7 @@ function Dashboard() {
   const handleRobotStatus = () => {
     setRobotStatusLoading(true);
     setTimeout(() => {
-      setRobotStatus((prev: boolean) => !prev);
+      setRobotStatus((prev:boolean) => !prev);
       setRobotStatusLoading(false);
     }, 1000);
   };
@@ -175,7 +174,7 @@ function Dashboard() {
       rounded !px-12 !py-8"
     >
       {contextHolder}
-      <h1 className="text-center font-bold text-[27px]">Panel</h1>
+      <h1 className="text-center font-bold text-[24px]">Panel</h1>
 
       <FetchProduct
         fetchingStatus={fetchingStatus}

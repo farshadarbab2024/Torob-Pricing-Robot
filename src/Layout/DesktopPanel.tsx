@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Outlet, redirect, useNavigate } from "react-router-dom";
 import logo from "/logo.png";
 import { MdDashboard } from "react-icons/md";
@@ -16,53 +16,70 @@ interface Page {
   fn: any;
 }
 
-type MenuItem = Required<MenuProps>["items"][number] ;
+type MenuItem = Required<MenuProps>["items"][number];
 
 function DesktopPanel() {
-  const navigator = useNavigate() ; 
-  const [messageApi, contextHolder ] = message.useMessage() ; 
+  const navigator = useNavigate();
+  const [messageApi, contextHolder] = message.useMessage();
   const pages: MenuItem[] = [
     {
-      key: "Panel",
-      label: "Panel",
+      key: "dashboard",
+      label: "Dashboard",
       icon: <MdDashboard />,
     },
     {
-      key: "Logs", 
+      key: "logs",
       label: "Logs",
       icon: <BiSolidNotepad />,
     },
     {
-      key: "invoices", 
+      key: "invoices",
       label: "Invoices",
       icon: <ImPaypal />,
     },
     {
-      key: "settings", 
+      key: "settings",
       label: "Settings",
       icon: <MdSettings className="!text-[15px]" />,
     },
     {
-      key: "logout", 
+      key: "logout",
       label: "Logout",
       icon: <IoLogOut className="!text-[15px]" />,
     },
   ];
 
   const handleMenuClicked = (e: { key: string }) => {
-    
-    // if(e.key == "logout"){
-    //   Auth.logout()
-    //     .then(() => {
-    //       navigator("/login") ;
-    //     })
+    if (e.key == "dashboard") {
+      navigator("/panel/dashboard");
+    }
 
-    //     .catch((error) => {
-    //       console.log(error) ; //ntdelete
-    //       messageApi.error("Error logging out")
-    //     })
-    // } //ntch uncomment this text
-  }
+    if (e.key == "logs") {
+      navigator("/panel/logs");
+    }
+
+    if (e.key == "invoices") {
+      navigator("/panel/invoices");
+    }
+    if (e.key == "settings") {
+      navigator("/panel/settings");
+    }
+
+    if (e.key == "logout") {
+      navigator("/login/");
+    }
+  };
+
+  const getDefaultKey = ():string => {
+    const u = new URL(window.location.href);
+    const parts = u.pathname.split("/").filter(Boolean); // ["panel","logs"]
+    const last:string = parts.pop() ?? ""; // "logs"
+    return last ;
+  };
+
+  
+
+
   return (
     <div className="flex justify-between">
       {contextHolder}
@@ -73,25 +90,24 @@ function DesktopPanel() {
         <img
           src={logo}
           alt="logo"
-          className="!mx-auto block !mt-12 w-[50px] h-[50px]
-      "
+          className="!mx-auto block !mt-12 w-[50px] h-[50px]"
         />
         <Menu
           theme="dark"
           className="!bg-[#300000] !mt-12 !px-4"
           items={pages}
           onClick={handleMenuClicked}
+          defaultSelectedKeys={[getDefaultKey()]}
         />
       </div>
       <div className="w-[220px] h-screen"></div>
 
       <div
-      className="bg-gradient-to-tr from-main-red to-main-blue !py-8"
-      style={{
-        width: "calc(100% - 220px)"
-      }} 
+        className="bg-gradient-to-tr from-main-red to-main-blue !py-8"
+        style={{
+          width: "calc(100% - 220px)",
+        }}
       >
-
         <Outlet />
       </div>
     </div>

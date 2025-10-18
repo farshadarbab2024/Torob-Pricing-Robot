@@ -9,6 +9,7 @@ import DesktopPanel from "../Layout/DesktopPanel";
 import { redirect } from "react-router-dom";
 import Auth from "../services/Auth";
 import Settings from "../pages/panel/Settings";
+import Logs from "../pages/panel/Logs";
 const loginCheck = async () => {
   try {
     const response = await Auth.Me();
@@ -52,6 +53,10 @@ const router = createBrowserRouter([
         path: "settings",
         element: <Settings />,
       },
+      {
+        path: "logs", 
+        element: <Logs />
+      }
     ],
   },
 ]);

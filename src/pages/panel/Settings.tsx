@@ -30,7 +30,7 @@ function Settings() {
         max-w-[90%] !pt-6 rounded-xl !px-6 !py-4 relative
         !pb-20 min-h-[90vh]">
       {contextHolder}
-      <h1 className="font-bold text-[27px] text-center">Settings</h1>
+      <h1 className="font-bold text-[24px] text-center">Settings</h1>
 
       <div className="!mt-8">
         <Form layout="vertical" 
