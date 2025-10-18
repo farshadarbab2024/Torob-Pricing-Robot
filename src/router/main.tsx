@@ -10,6 +10,7 @@ import { redirect } from "react-router-dom";
 import Auth from "../services/Auth";
 import Settings from "../pages/panel/Settings";
 import Logs from "../pages/panel/Logs";
+import Invoices from "../pages/panel/Invoices";
 const loginCheck = async () => {
   try {
     const response = await Auth.Me();
@@ -56,6 +57,10 @@ const router = createBrowserRouter([
       {
         path: "logs", 
         element: <Logs />
+      }, 
+      {
+        path: "invoices",
+        element: <Invoices />
       }
     ],
   },
