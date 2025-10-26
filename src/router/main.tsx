@@ -11,6 +11,7 @@ import Auth from "../services/Auth";
 import Settings from "../pages/panel/Settings";
 import Logs from "../pages/panel/Logs";
 import Invoices from "../pages/panel/Invoices";
+import LandingPage from "../pages/LandingPage";
 const loginCheck = async () => {
   try {
     const response = await Auth.Me();
@@ -25,6 +26,10 @@ const loginCheck = async () => {
 };
 
 const router = createBrowserRouter([
+  {
+    path: "/", 
+    element: <LandingPage /> , 
+  }, 
   {
     path: "/login",
     loader: loginCheck,
