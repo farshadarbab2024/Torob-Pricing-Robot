@@ -167,42 +167,6 @@ function Settings() {
               variant="filled"
             />
           </Form.Item>
-          <Form.Item label="Care the buybox algorithem"
-          name="algorithem"
-          >
-            <ConfigProvider
-              theme={{
-                token: {
-                  controlHeight: 47, // height of input, button, etc.
-                },
-              }}
-            >
-              <Radio.Group
-                block
-                options={[
-                  {
-                    label: (
-                      <span className="flex justify-center gap-x-1 items-center !text-[16px] font-bold">
-                        <CheckOutlined className="!font-bold" /> Yes
-                      </span>
-                    ),
-                    value: "yes",
-                  },
-                  {
-                    label: (
-                      <span className="flex justify-center gap-x-1 items-center !text-[16px] font-bold">
-                        <RxCross2 /> No
-                      </span>
-                    ),
-                    value: "no",
-                  },
-                ]}
-                defaultValue="yes"
-                optionType="button"
-                buttonStyle="solid"
-              />
-            </ConfigProvider>
-          </Form.Item>
 
           <Form.Item className="col-span-2"
           name="speed"
