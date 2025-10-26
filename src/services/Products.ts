@@ -1,3 +1,5 @@
+// these codes are fake api
+
 import BaseApiService from "./_BaseApiService";
 
 class Products extends BaseApiService {

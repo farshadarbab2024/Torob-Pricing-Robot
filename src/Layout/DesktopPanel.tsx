@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react";
-import { Outlet, redirect, useNavigate } from "react-router-dom";
+import React from "react";
+import { Outlet, useNavigate } from "react-router-dom";
 import logo from "/logo.png";
 import { MdDashboard } from "react-icons/md";
 import { BiSolidNotepad } from "react-icons/bi";
@@ -8,13 +8,6 @@ import { ImPaypal } from "react-icons/im";
 import { IoLogOut } from "react-icons/io5";
 import { Menu, message } from "antd";
 import type { MenuProps } from "antd";
-import Auth from "../services/Auth";
-
-interface Page {
-  title: string;
-  icon: any;
-  fn: any;
-}
 
 type MenuItem = Required<MenuProps>["items"][number];
 

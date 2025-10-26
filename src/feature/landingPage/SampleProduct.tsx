@@ -5,7 +5,6 @@ import { RiEdit2Fill } from "react-icons/ri";
 import { RxCross2 } from "react-icons/rx";
 import { Link } from "react-router-dom";
 import logo from "../../assets/Images/logo.png";
-import { FaShop } from "react-icons/fa6";
 import { BiSolidShoppingBagAlt } from "react-icons/bi";
 
 function SampleProduct() {
@@ -212,7 +211,7 @@ function SampleProduct() {
 
       <div
         className="absolute right-0 top-0 h-full w-[40px] flex flex-col justify-between
-      rounded-tr rounded-br overflow-hidden"
+        rounded-tr rounded-br overflow-hidden"
       >
         <Link
           target="_blank"

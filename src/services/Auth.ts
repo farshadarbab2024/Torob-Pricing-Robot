@@ -1,3 +1,5 @@
+// Icomplete: this section is incomplete because I have not access to backend api
+
 import BaseApiService from "./_BaseApiService";
 
 interface registerData {

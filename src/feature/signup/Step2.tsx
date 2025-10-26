@@ -55,24 +55,6 @@ function Step2({
   const handleVerifyEmail = () => {
     setVerifyEmailButtonLoading(true);
 
-    const data = {
-      code: otp,
-    };
-
-    // Auth.verfiyEmail(data)
-    //   .then(() => {
-    //     setVerifyEmailButtonLoading(false) ;
-    //     navigator("/panel") ;
-    //   })
-    //   .catch((error) => {
-    //     if(error?.response?.data?.message){
-    //       messageApi.error(error.response.data.message) ;
-    //     }else{
-    //       messageApi.error("Email verification failed")
-    //     }
-    //     setVerifyEmailButtonLoading(false) ;
-    //   }) ; //ntdelete
-
     setTimeout(() => {
       navigator("/panel");
     }, 1000);

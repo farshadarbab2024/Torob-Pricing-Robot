@@ -10,6 +10,7 @@ import { RxCross2 } from "react-icons/rx";
 import Lottie from "lottie-react";
 import live from "../../assets/animation/live.json";
 import FetchProduct from "../../feature/public/FetchProducts";
+
 const { Search } = Input;
 
 interface Product {
@@ -179,7 +180,6 @@ function Dashboard() {
       <FetchProduct
         fetchingStatus={fetchingStatus}
         setFetchingStatus={setFetchingStatus}
-        fetchingProductsLoading={fetchingProductsLoading}
       />
       {/* Navbar */}
       <div

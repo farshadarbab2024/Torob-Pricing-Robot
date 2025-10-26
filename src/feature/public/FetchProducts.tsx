@@ -1,6 +1,6 @@
 import { Progress } from "antd";
 import React, { useEffect, useState } from "react";
-function FetchProduct({fetchingStatus, setFetchingStatus, fetchingProductsLoading}: {fetchingStatus:any, setFetchingStatus:any, fetchingProductsLoading:any}) {
+function FetchProduct({fetchingStatus, setFetchingStatus}: {fetchingStatus:any, setFetchingStatus:any}) {
   console.log("fetchingStatus: " + fetchingStatus) ; //ntdelete
   if(fetchingStatus == "noStatus"){
     return <div></div> ;

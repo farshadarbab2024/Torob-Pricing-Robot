@@ -1,11 +1,10 @@
 import React, { useState } from "react";
-import { Button, Card, Form, Input, message } from "antd";
+import { Button, Form, Input, message } from "antd";
 import { FcGoogle } from "react-icons/fc";
 import { IoArrowBack, IoCloseCircle } from "react-icons/io5";
 import { z } from "zod";
 import { Controller, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { GiConfirmed } from "react-icons/gi";
 import { MdOutlineEmail } from "react-icons/md";
 import { TbPasswordFingerprint } from "react-icons/tb";
 import Auth from "../services/Auth";
@@ -109,7 +108,7 @@ function Login() {
 
             <span
               className="text-secondary block !my-8 text-center
-          text-lg"
+              text-lg"
             >
               or
             </span>
@@ -166,9 +165,9 @@ function Login() {
             <Button
               htmlType="submit"
               className="!w-[180px] !h-[53px] !block
-            !bg-main-red !text-xl !font-medium !text-white !rounded-full
-            hover:!bg-main-red-hover !absolute bottom-[5%] right-1/2 translate-x-1/2
-            !flex !items-center !justify-center !gap-x-0"
+              !bg-main-red !text-xl !font-medium !text-white !rounded-full
+              hover:!bg-main-red-hover !absolute bottom-[5%] right-1/2 translate-x-1/2
+              !flex !items-center !justify-center !gap-x-0"
               loading={loading}
             >
               <span className="!mx-2">LOGIN</span>

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Button, Card, Form, Input, message } from "antd";
+import { Button, Form, Input, message } from "antd";
 import { FcGoogle } from "react-icons/fc";
 import { IoArrowBack, IoCloseCircle } from "react-icons/io5";
 import { z } from "zod";
@@ -9,7 +9,6 @@ import { GiConfirmed } from "react-icons/gi";
 import { MdOutlineEmail } from "react-icons/md";
 import { TbPasswordFingerprint } from "react-icons/tb";
 import Auth from "../../services/Auth";
-import { useNavigate } from "react-router-dom";
 interface MainData {
   email: string;
   password: string;
@@ -20,11 +19,8 @@ function Step1({
 }: {
   setStep: React.Dispatch<React.SetStateAction<number>>;
 }) {
-  const navigate = useNavigate();
   const [messageApi, contextHolder] = message.useMessage();
   const [loading, setLoading] = useState<boolean>(false);
-  const baseUrl = import.meta.env.VITE_APP_BASE_URL ;
-  const navigator = useNavigate() ; 
   const schema = z
     .object({
       email: z.email({ message: "Please enter a valid email address" }),
@@ -69,9 +65,7 @@ function Step1({
     };
 
     Auth.register(mainData)
-      .then((response) => {
-        // const token = (response?.data as any).data.token || null;
-        // localStorage.setItem("token", token); //ntdelete
+      .then(() => {
         setLoading(false);
         setStep(2);
       })
