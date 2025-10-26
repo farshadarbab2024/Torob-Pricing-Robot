@@ -167,7 +167,7 @@ function LandingPage() {
                 <Link to="/signup">
                   <Button
                     className="!bg-[#e91e33] !mt-6 w-[300px] !h-[50px] !text-[17px] !font-medium
-                max-w-full hover:!text-black hover:!bg-[#c11425]"
+                    max-w-full hover:!text-black hover:!bg-[#c11425]"
                   >
                     Get Started For Free
                   </Button>
@@ -243,7 +243,7 @@ function LandingPage() {
               <Button
                 type="primary"
                 className="!text-black !h-[40px] w-[220px] !mt-6 lg:!text-[18px] lg:w-[270px]
-              lg:!h-[47px] md:!text-[16px]"
+                lg:!h-[47px] md:!text-[16px]"
               >
                 Get Started For Free
               </Button>
@@ -588,7 +588,7 @@ function LandingPage() {
             <h2 className="text-[20px] font-extrabold">How to Start?</h2>
             <div
               className="!mt-1 bg-gradient-to-r from-main-red to-[#6B839F] h-[5px] rounded-full
-            w-[100px]"
+              w-[100px]"
             ></div>
           </motion.div>
 
@@ -663,7 +663,7 @@ function LandingPage() {
               </h2>
               <div
                 className="!mt-1 bg-gradient-to-r from-main-red to-[#6B839F] h-[5px] rounded-full
-              w-[100px] lg:!mt-6"
+                w-[100px] lg:!mt-6"
               ></div>
             </motion.div>
 
@@ -850,7 +850,7 @@ function LandingPage() {
           >
             <motion.div
               className="bg-white w-[1400px] max-w-[90%] absolute top-[5%] right-1/2 translate-x-1/2
-            !px-8 z-20 rounded-xl !pb-12 z-30 h-[560px]"
+              !px-8 z-20 rounded-xl !pb-12 z-30 h-[560px]"
               style={{
                 boxShadow: "0px 0px 5px rgba(0,0,0,0.2)",
               }}
@@ -873,13 +873,13 @@ function LandingPage() {
               <div className="!mt-12 flex justify-center items-center gap-x-16 relative">
                 <div
                   className="w-[100px] border-t-[1px] border-[#BABABA] absolute top-1/2
-                left-1/2 -translate-x-1/2 translate-y-1/2 !z-[-10]"
+                  left-1/2 -translate-x-1/2 translate-y-1/2 !z-[-10]"
                 ></div>
 
                 <div className="flex flex-col justify-between items-center bg-white">
                   <div
                     className="border-[1px] border-[#E3E3E3] !py-8 !px-6 w-[500px] h-[400px]
-                  rounded-lg relative"
+                    rounded-lg relative"
                   >
                     <div className="w-full">
                       <div className="flex justify-between items-start !px-2">
@@ -898,7 +898,7 @@ function LandingPage() {
                       <div className="flex justify-between items-start !px-2">
                         <span
                           className="text-[#9CA3AF] text-[14px] leading-none block
-                      leading-none"
+                          leading-none"
                         >
                           100
                         </span>
@@ -934,7 +934,7 @@ function LandingPage() {
                       <Button
                         type="primary"
                         className="!w-[92%] !h-[45px] !text-[17px] !absolute 
-                    !bottom-[10%] right-1/2 translate-x-1/2 bg-yellow-500"
+                        !bottom-[10%] right-1/2 translate-x-1/2 bg-yellow-500"
                       >
                         Start your 7 day free
                       </Button>
@@ -945,7 +945,7 @@ function LandingPage() {
                 <div className="flex flex-col justify-between items-center bg-white">
                   <div
                     className="border-[1px] border-[#E3E3E3] !px-6 w-[500px]
-                  rounded-lg h-[400px] relative"
+                    rounded-lg h-[400px] relative"
                   >
                     <h3 className="text-[18px] font-bold text-center !mt-6">
                       Cost
@@ -971,7 +971,7 @@ function LandingPage() {
 
                     <Button
                       className="!w-[92%] !h-[45px] !mt-12 !text-[17px] !text-main-red !border-main-red
-                    !absolute bottom-[10%] right-1/2 translate-x-1/2 !cursor-default"
+                      !absolute bottom-[10%] right-1/2 translate-x-1/2 !cursor-default"
                     >
                       Just USD 0.01 per price check
                     </Button>

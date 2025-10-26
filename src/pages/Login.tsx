@@ -9,7 +9,6 @@ import { GiConfirmed } from "react-icons/gi";
 import { MdOutlineEmail } from "react-icons/md";
 import { TbPasswordFingerprint } from "react-icons/tb";
 import Auth from "../services/Auth";
-import { useGoogleLogin } from "@react-oauth/google";
 import { useNavigate } from "react-router-dom";
 import backgroundImage from "../assets/Images/background-image.png";
 import RightSide from "../feature/login/RightSide";
@@ -64,16 +63,6 @@ function Login() {
         }
         setLoading(false);
       });
-
-    //   const googleLogin = useGoogleLogin({
-    //     onSuccess: async (tokenResponse) => {
-    //       const token = tokenResponse.access_token;
-    //       navigate("/panel");
-    //     },
-    //     onError: () => {
-    //       messageApi.error("Login Failed");
-    //     },
-    //   });
   };
 
   return (
@@ -113,7 +102,6 @@ function Login() {
             <Button
               className="!flex !items-center !justify-center gap-x-2 !mx-auto
           !text-lg !w-full !h-15 !mt-10"
-              //   onClick={() => googleLogin()}
             >
               <FcGoogle />
               Login With Google

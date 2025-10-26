@@ -9,7 +9,6 @@ import { GiConfirmed } from "react-icons/gi";
 import { MdOutlineEmail } from "react-icons/md";
 import { TbPasswordFingerprint } from "react-icons/tb";
 import Auth from "../../services/Auth";
-import { useGoogleLogin } from "@react-oauth/google";
 import { useNavigate } from "react-router-dom";
 interface MainData {
   email: string;
@@ -90,21 +89,6 @@ function Step1({
       });
   };
 
-  const googleLogin = useGoogleLogin({
-    onSuccess: async (tokenResponse) => {
-      const token = tokenResponse.access_token;
-      navigate("/panel");
-    },
-    onError: () => {
-      messageApi.error("Login Failed");
-    },
-  });
-
-  const handleGoogleSignup = () => {
-    const address = baseUrl + "/auth/google/redirect" ;
-    window.location.href = address ; 
-  }
-
   return (
     <div
       className="bg-white w-screen h-[85.5vh] md:w-1/2 md:h-screen lg:h-full
@@ -127,7 +111,6 @@ function Step1({
         <Button
           className="!flex !items-center !justify-center gap-x-2 !mx-auto
           !text-lg !w-full !h-15 !mt-4"
-          onClick={handleGoogleSignup}
         >
           <FcGoogle />
           Sign Up With Google
