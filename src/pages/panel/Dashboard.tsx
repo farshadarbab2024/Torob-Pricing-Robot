@@ -175,7 +175,7 @@ function Dashboard() {
       rounded !px-12 !py-8"
     >
       {contextHolder}
-      <h1 className="text-center font-bold text-[24px]">Panel</h1>
+      <h1 className="text-center font-bold text-[24px]">Dashboard</h1>
 
       <FetchProduct
         fetchingStatus={fetchingStatus}
