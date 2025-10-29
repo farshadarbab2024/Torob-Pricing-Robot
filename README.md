@@ -1,69 +1,42 @@
-# React + TypeScript + Vite
+# Project Main Idea
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project helps online shops **keep their prices up-to-date automatically** based on other online shops' prices.  
 
-Currently, two official plugins are available:
+![Signup Page](assets/signup.png)  
+![Landing Page](assets/landing-page.png)  
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+# What This Panel Does
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+This panel allows users to **control the price automation robot** through a **user-friendly interface**.  
+> ⚠️ Note: This web application is still in testing and does **not** include an API service handler.  
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+---
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+## Pages
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+The application includes the following pages:  
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+- Landing Page  
+- Signup  
+- Login  
+- Launch Robot  
+- Not Found Page  
+- Panel / Dashboard  
+- Panel / Logs  
+- Panel / Invoices  
+- Panel / Settings  
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+---
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## How to Use
+
+To run and test the project, follow these steps:  
+
+- first clone the project using "git clone https://github.com/farshadarbab2024/price-automation-panel" command.
+- Navigate to the project folder and install the dependencies: "npm install"
+- Start the project by running: "npm run dev"
+- Open your browser and go to: localhost:5173
+- To access the panel interface, go to: "localhost:5173/panel/dashboard"
+
