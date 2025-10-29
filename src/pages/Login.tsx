@@ -37,7 +37,6 @@ function Login() {
     control,
     handleSubmit,
     formState: { errors },
-    setError,
   } = useForm({
     resolver: zodResolver(schema),
   });
@@ -66,15 +65,14 @@ function Login() {
 
   return (
     <div
-      className="w-screen h-screen overflow-hidden lg:bg-cover lg:bg-center
-      "
+      className="w-screen h-screen overflow-hidden lg:bg-cover lg:bg-center"
       style={{
         backgroundImage: `url(${backgroundImage})`,
       }}
     >
       <div
-        className="bg-main-red w-full h-full lg:w-[850px] lg:h-[550px] lg:max-w-[90vw] lg:max-h-[90vh]
-        relative lg:absolute lg:top-1/2 lg:right-1/2 
+        className="bg-main-red w-full h-full lg:w-[850px] lg:h-[550px] lg:max-w-[90vw] 
+        lg:max-h-[90vh] relative lg:absolute lg:top-1/2 lg:right-1/2 
         lg:translate-x-1/2 lg:-translate-y-1/2 flex flex-col
         justify-between md:flex-row-reverse md:justify-between lg:rounded-xl
         md:bg-white border-[1px] border-white"
@@ -100,12 +98,13 @@ function Login() {
             {/* Login With Google */}
             <Button
               className="!flex !items-center !justify-center gap-x-2 !mx-auto
-          !text-lg !w-full !h-15 !mt-10"
+              !text-lg !w-full !h-15 !mt-10"
             >
               <FcGoogle />
               Login With Google
             </Button>
 
+            {/* or */}
             <span
               className="text-secondary block !my-8 text-center
               text-lg"
@@ -162,6 +161,7 @@ function Login() {
               />
             </Form.Item>
 
+            {/* Login Button */}
             <Button
               htmlType="submit"
               className="!w-[180px] !h-[53px] !block
@@ -171,7 +171,7 @@ function Login() {
               loading={loading}
             >
               <span className="!mx-2">LOGIN</span>
-              <IoArrowBack className=" !text-white rotate-180" />
+              <IoArrowBack className="!text-white rotate-180" />
             </Button>
           </Form>
         </div>

@@ -271,6 +271,7 @@ function Logs() {
                 onChange={(value: number | "all") => setProductId(value)}
               />
             </Form.Item>
+
             <Form.Item label="Status" name="status">
               <Select
                 className="!bg-[#F0F0F0] border-[1px] border-[#4D4D4D] rounded !h-[47px]"
@@ -296,7 +297,8 @@ function Logs() {
                 ]}
               />
             </Form.Item>
-            <Form.Item className="col-span-2">
+
+            <Form.Item className="col-span-2" name="search">
               <Input
                 className="!bg-[#F0F0F0] border-[1px] !border-[#4D4D4D] rounded !h-[47px]"
                 placeholder="Includes"
@@ -322,10 +324,12 @@ function Logs() {
         <h2 className="font-bold text-[18px]">Logs</h2>
 
         <div className="flex justify-between items-end">
+          {/* left top text */}
           <span className="text-[14px] text-[#9CA3AF] !mt-4 block">
             29 price change | 0 failures | 432 logs in total
           </span>
 
+          {/* right top text */}
           <div
             className="text-[14px] flex justify-start gap-x-2 items-center"
             style={{
@@ -346,6 +350,7 @@ function Logs() {
           }}
         >
           {logs.map((log: any, index: number) => {
+            // ----- filters
             if (productId !== "all") {
               if (log.product_id != productId) {
                 return;
@@ -354,13 +359,15 @@ function Logs() {
 
             if (reportStatusFilter != "all") {
               if (reportStatusFilter != log.isSuccessfull) {
-                return ;
+                return;
               }
             }
 
-            if(!log.text.includes(searchFilter)){
-              return ;
+            if (!log.text.includes(searchFilter)) {
+              return;
             }
+            // ------
+            
             return (
               <div
                 className="flex justify-start items-center gap-x-2 !mt-4"

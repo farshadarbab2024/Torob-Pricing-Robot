@@ -41,8 +41,9 @@ function Dashboard() {
   const [fetchingStatus, setFetchingStatus] = useState<
     "noStatus" | "error" | "success" | "fetching"
   >("noStatus");
-  const [fetchingProductsLoading, setFetchingProductsLoading] = useState<boolean>(false) ; 
-  const [robotStatus, setRobotStatus] = useState() ; 
+  const [fetchingProductsLoading, setFetchingProductsLoading] =
+    useState<boolean>(false);
+  const [robotStatus, setRobotStatus] = useState();
   const setState = (productId: number, stateName: any, stateValue: any) => {
     setProductStates((prev) => ({
       ...prev,
@@ -139,7 +140,7 @@ function Dashboard() {
   const handleRobotStatus = () => {
     setRobotStatusLoading(true);
     setTimeout(() => {
-      setRobotStatus((prev:boolean) => !prev);
+      setRobotStatus((prev: boolean) => !prev);
       setRobotStatusLoading(false);
     }, 1000);
   };
@@ -163,10 +164,10 @@ function Dashboard() {
   };
 
   const handleFetchProductsButtonClicked = () => {
-    setFetchingProductsLoading(true) ; 
+    setFetchingProductsLoading(true);
     setTimeout(() => {
       setFetchingStatus("fetching");
-      setFetchingProductsLoading(false) ; 
+      setFetchingProductsLoading(false);
     }, 1000);
   };
   return (
@@ -184,9 +185,10 @@ function Dashboard() {
       {/* Navbar */}
       <div
         className="w-full flex items-center justify-between
-      rounded !mt-6"
+        rounded !mt-6"
       >
         <div className="flex items-center justify-start gap-x-2 !h-[40px]">
+          {/* turn on / turn off */}
           <Button
             className="!h-full hover:!text-main-red group"
             onClick={handleRobotStatus}
@@ -209,6 +211,8 @@ function Dashboard() {
 
             {robotStatus ? "Robot On" : "Robot Off"}
           </Button>
+
+          {/* search product */}
           <ConfigProvider
             theme={{
               components: {
@@ -236,6 +240,8 @@ function Dashboard() {
             />
           </ConfigProvider>
         </div>
+
+        {/* fetch products button */}
         <Button
           className="!bg-main-red !text-white !font-medium !h-[40px]"
           loading={fetchingProductsLoading ? true : false}
@@ -248,7 +254,7 @@ function Dashboard() {
       <hr className="border-[#B2B2B2] !mt-4" />
 
       {/* Products */}
-      <InfiniteScroll
+      <InfiniteScroll 
         dataLength={products.length}
         next={getProducts}
         hasMore={hasMore}
@@ -281,13 +287,15 @@ function Dashboard() {
                 boxShadow: "0px 2px 5px rgba(0,0,0,0.2)",
               }}
             >
+              {/* white semicircle over the product */}
               <div
                 className="absolute top-0 left-0 bg-[#f5f5f5]/90 w-[2px] h-[170px] rounded-tr-[50%]
-              rounded-br-[50%] group-hover:w-[85px] transition-all duration-300"
+                rounded-br-[50%] group-hover:w-[85px] transition-all duration-300"
                 style={{
                   display: robotStatus ? "block" : "none",
                 }}
               >
+                {/* vertical blue rectangle */}
                 <div
                   className="bg-main-blue w-[2px] absolute left-0 top-0"
                   style={{
@@ -300,9 +308,11 @@ function Dashboard() {
                       : "none",
                   }}
                 ></div>
+
+                {/* time for next signal */}
                 <span
                   className="text-[25px] absolute top-1/2 right-1/2 translate-x-1/2 -translate-y-1/2
-                text-[#1F1F1F] opacity-0 group-hover:opacity-100 transition duration-500"
+                  text-[#1F1F1F] opacity-0 group-hover:opacity-100 transition duration-500"
                 >
                   {isChangePriceSuccessfull ? (
                     <CheckOutlined className="!text-success-green" />
@@ -320,20 +330,29 @@ function Dashboard() {
                   )}
                 </span>
               </div>
+
+              {/* main image */}
               <img
                 src={product.image}
                 alt={product.title}
                 className="h-full
                 rounded"
               />
+
+              {/* the product content */}
               <div className="w-full">
+
+                {/* title */}
                 <span className="font-bold text-[18px] block">
                   {product.title}
                 </span>
+
+
                 <div
                   className="flex justify-start w-full
                   gap-x-16 !mt-4"
                 >
+                  {/* right column */}
                   <div>
                     <span className="block text-[#4D4D4D]">
                       Current Price: {product.current_price}
@@ -345,7 +364,11 @@ function Dashboard() {
                       Average Rank: {product.average_rank}
                     </span>
                   </div>
+
+                  {/* left column */}
                   <div>
+
+                    {/* min price */}
                     <span className="block text-[#4D4D4D] flex justify-start items-center gap-x-2">
                       Minimum Price:
                       <span
@@ -361,7 +384,7 @@ function Dashboard() {
                       </span>
                       <RiEdit2Fill
                         className="!text-main-blue
-                    !text-[18px] !cursor-pointer hover:!text-[#2792ad]"
+                        !text-[18px] !cursor-pointer hover:!text-[#2792ad]"
                         onClick={() => handleMinPriceEditClick(product.id)}
                         style={{
                           display: minPriceInputShow ? "none" : "inline",
@@ -381,6 +404,8 @@ function Dashboard() {
                         onPressEnter={() => handleMinPriceInputBlur(product.id)}
                       />
                     </span>
+
+                    {/* torob link */}
                     <span className="block text-[#4D4D4D] !mt-2">
                       Torob Link:&nbsp;
                       <span
@@ -423,6 +448,8 @@ function Dashboard() {
                         }
                       />
                     </span>
+
+                    {/* status */}
                     <span className="block text-[#4D4D4D] !mt-2">
                       Status:{" "}
                       <Button
@@ -455,6 +482,7 @@ function Dashboard() {
                         />
                       </Button>
                     </span>
+                    
                   </div>
                 </div>
               </div>

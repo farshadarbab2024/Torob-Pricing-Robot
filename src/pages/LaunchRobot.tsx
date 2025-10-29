@@ -109,12 +109,12 @@ function LaunchRobot() {
   return (
     <div
       className="bg-gradient-to-tr from-[#E91E33] to-[#34afce] w-screen
-        h-screen"
+      h-screen"
     >
       {contextHolder}
       <div
         className="bg-white/40 w-[550px] h-[700px] md:h-[470px] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-lg
-            max-w-[90vw] max-h-[93vh] !p-5 !pl-22"
+        max-w-[90vw] max-h-[93vh] !p-5 !pl-22"
       >
         {/* Steps Bar */}
         <div
@@ -139,7 +139,6 @@ function LaunchRobot() {
               </p>
               <Form.Item
                 name="domain"
-                // label={<span className="text-[18px]">Domain</span>}
                 className="!mt-12 !text-[18px]"
               >
                 <Input
@@ -264,7 +263,7 @@ function LaunchRobot() {
 
           <div
             className="absolute bottom-0 right-0 flex items-end 
-          gap-4"
+            gap-4"
           >
             <Button
               disabled={currentStep == 0 ? true : false}

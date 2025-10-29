@@ -1,6 +1,6 @@
 // these codes are fake api
 
-import BaseApiService from "./_BaseApiService";
+import BaseApiService from "./BaseApiService";
 
 class Products extends BaseApiService {
   public static async getProducts(page: number) {

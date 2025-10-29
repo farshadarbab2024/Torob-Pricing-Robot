@@ -1,10 +1,8 @@
 import {
   Button,
-  ConfigProvider,
   Form,
   Input,
   message,
-  Radio,
   Select,
   Slider,
   Tooltip,
@@ -12,7 +10,6 @@ import {
 import React, { useState } from "react";
 import { FaQuestion } from "react-icons/fa";
 import { CheckOutlined } from "@ant-design/icons";
-import { RxCross2 } from "react-icons/rx";
 
 function Settings() {
   const handleSpeedChange = (newSpeed: number) => {
@@ -27,8 +24,8 @@ function Settings() {
   return (
     <div
       className="bg-white w-[900px] !mx-auto
-        max-w-[90%] !pt-6 rounded-xl !px-6 !py-4 relative
-        !pb-20 min-h-[90vh]">
+      max-w-[90%] !pt-6 rounded-xl !px-6 !py-4 relative
+      !pb-20 min-h-[90vh]">
       {contextHolder}
       <h1 className="font-bold text-[24px] text-center">Settings</h1>
 
@@ -136,7 +133,7 @@ function Settings() {
             <Input
               maxLength={32}
               autoComplete="off"
-              placeholder="amazon.com"
+              placeholder="ck_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
               className="!text-[16px] !h-[47px]"
               variant="filled"
             />
@@ -162,7 +159,7 @@ function Settings() {
             <Input
               maxLength={32}
               autoComplete="off"
-              placeholder="amazon.com"
+              placeholder="cs_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
               className="!text-[16px] !h-[47px]"
               variant="filled"
             />
@@ -173,6 +170,7 @@ function Settings() {
           >
             <div className="flex items-center justify-start gap-x-3 !mb-2">
               <label>Speed</label>
+              {/* question black circle */}
               <Tooltip
                 title="How many times a day do you want prices to be checked?"
                 placement="right"

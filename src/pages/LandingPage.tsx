@@ -233,7 +233,7 @@ function LandingPage() {
 
             <p
               className="text-justify !mt-8 text-[#565656] w-[340px] text-[17px] leading-relaxed
-            lg:w-[510px] lg:leading-loose lg:text-[20px]"
+              lg:w-[510px] lg:leading-loose lg:text-[20px]"
             >
               Outsource the competitive pricing of your WordPress website to a
               24/7 smart bot. Stay on top in Torob, win the Torob Buy Box, and
@@ -269,9 +269,9 @@ function LandingPage() {
         </div>
       </div>
 
-      {/* Statistics and Torob */}
+      {/* Statistics */}
       <div>
-        {/* for Mobile */}
+        {/* statistics for Mobile */}
         <div className="md:hidden">
           <div className="w-[80vw] !mx-auto !mt-16">
             <motion.h2
@@ -363,16 +363,18 @@ function LandingPage() {
           </div>
         </div>
 
-        {/* laptop & tablet */}
+        {/* statistics for laptop & tablet */}
         <div
           className="hidden md:flex items-start justify-start
           !mt-24 md:w-[1000px] lg:w-[1500px] max-w-[90%] gap-x-8"
         >
+          {/* mobile image */}
           <img
             src={mobile}
             alt="torob inside a mobile"
             className="md:w-[700px] md:max-w-[45%] lg:w-[550px] lg:max-w-[100000px]"
           />
+
           <div>
             <motion.div
               initial={{
@@ -394,7 +396,7 @@ function LandingPage() {
               </h2>
               <span
                 className="text-[17px] lg:text-[21px] text-justify !mt-4 block
-            text-[#565656] leading-relaxed lg:w-[650px]"
+                text-[#565656] leading-relaxed lg:w-[650px]"
               >
                 {isDesktop
                   ? "The Torob Pricing Robot helps you cut HR costs, boost profits, attract more visitors to your website, and automate tedious pricing tasks — saving you time, money, and effort while keeping your store always competitive."
@@ -402,6 +404,7 @@ function LandingPage() {
               </span>
             </motion.div>
 
+            {/* percenty features */}
             <div className="flex justify-between items-center md:!mt-20 lg:!mt-32">
               {statistics.map((statistic: any, index: number) => {
                 if (index >= 2 && isTablet) {
@@ -410,11 +413,11 @@ function LandingPage() {
                 return (
                   <motion.div
                     initial={{
-                      x: 20, 
+                      x: 20,
                       opacity: 0,
                     }}
                     whileInView={{
-                      x: 0, 
+                      x: 0,
                       opacity: 1,
                     }}
                     transition={{
@@ -424,11 +427,11 @@ function LandingPage() {
                     viewport={{ once: true }}
                     key={"statistic" + index}
                     className="border-l-[1px] border-black !pl-4 flex
-                  flex-col justify-between h-full lg:gap-y-6"
+                    flex-col justify-between h-full lg:gap-y-6"
                   >
                     <span
                       className="text-main-red font-bold md:text-[25px]
-                    lg:text-[30px]"
+                      lg:text-[30px]"
                     >
                       {statistic.percentNumber}%
                     </span>
@@ -446,7 +449,7 @@ function LandingPage() {
       {/* Features */}
       <div
         className="max-w-[85vw] !mx-auto !mt-12 md:!mt-24
-       md:max-w-[90vw]"
+        md:max-w-[90vw]"
       >
         <motion.div
           initial={{
@@ -469,6 +472,7 @@ function LandingPage() {
           <p className="text-[#565656] !mt-1 text-justify md:text-[19px] lg:text-[22px]">
             Start using the robot to realize its power
           </p>
+          {/* the rectangle */}
           <div className="bg-main-red rounded-full w-[200px] h-[5px] !mt-4"></div>
         </motion.div>
 
@@ -489,6 +493,7 @@ function LandingPage() {
             }}
             viewport={{ once: true }}
           >
+            {/* features */}
             <div className="!mt-6">
               {features.map((feature: string, index: number) => (
                 <div
@@ -586,6 +591,7 @@ function LandingPage() {
             }}
           >
             <h2 className="text-[20px] font-extrabold">How to Start?</h2>
+            {/* the bellow line */}
             <div
               className="!mt-1 bg-gradient-to-r from-main-red to-[#6B839F] h-[5px] rounded-full
               w-[100px]"
@@ -661,6 +667,7 @@ function LandingPage() {
               <h2 className="text-[20px] md:!text-[25px] lg:!text-[32px] font-extrabold">
                 How to Start?
               </h2>
+              {/* the bellow line */}
               <div
                 className="!mt-1 bg-gradient-to-r from-main-red to-[#6B839F] h-[5px] rounded-full
                 w-[100px] lg:!mt-6"
@@ -675,21 +682,22 @@ function LandingPage() {
               ></div>
 
               {steps.map((step: string, index: number) => (
-                <motion.div 
-                initial={{
-                  y: -15, 
-                  opacity: 0, 
-                }}
-                whileInView={{
-                  y: 0, 
-                  opacity: 1, 
-                }}
-                viewport={{ once: true }}
-                transition={{
-                  duration: 0.7, 
-                  delay: 1.4 + index * 0.7
-                }}
-                className="flex justify-start items-center gap-x-3">
+                <motion.div
+                  initial={{
+                    y: -15,
+                    opacity: 0,
+                  }}
+                  whileInView={{
+                    y: 0,
+                    opacity: 1,
+                  }}
+                  viewport={{ once: true }}
+                  transition={{
+                    duration: 0.7,
+                    delay: 1.4 + index * 0.7,
+                  }}
+                  className="flex justify-start items-center gap-x-3"
+                >
                   <div
                     className="w-[30px] h-[30px] bg-gradient-to-b from-main-red to-[#6B839E] rounded-full
                     flex items-center justify-center text-white lg:!w-[34px] lg:!h-[34px] lg:text-[18px]"
@@ -715,9 +723,9 @@ function LandingPage() {
         </div>
       </div>
 
-      {/* Calculation */}
+      {/* price calculation */}
       <div>
-        {/* for tablet & mobile */}
+        {/* price calculation for tablet & mobile */}
         <div className="!mt-65 relative h-[700px] lg:hidden">
           {/* calculate box */}
           <motion.div
@@ -742,6 +750,7 @@ function LandingPage() {
               Price Calculation
             </h2>
 
+            {/* box1 */}
             <div
               className="w-[90%] h-[320px] border-[1px] border-[#E3E3E3] rounded-xl max-w-[85vw]
               !mx-auto !mt-8 bg-white absolute right-1/2 top-[60px] translate-x-1/2 z-20 !px-4
@@ -797,6 +806,7 @@ function LandingPage() {
               </Link>
             </div>
 
+            {/* costs box */}
             <div
               className="w-[90%] h-[330px] border-[1px] border-[#E3E3E3] rounded-xl max-w-[85vw]
               !mx-auto !mt-8 bg-white absolute right-1/2 top-[420px] translate-x-1/2 z-20 !px-4 !pb-8 !pt-4"
@@ -829,6 +839,7 @@ function LandingPage() {
               </div>
             </div>
 
+            {/* conecting boxes line */}
             <div
               className="h-[320px] absolute top-1/2 right-1/2 translate-x-1/2 -translate-y-1/2
               border-r-[1px] border-[#BABABA]"
@@ -839,11 +850,11 @@ function LandingPage() {
           <div className="w-full h-[700px] absolute top-[0%] right-0 bg-main-red overflow-hidden"></div>
         </div>
 
-        {/* for laptop */}
+        {/* price calcuation for laptop */}
         <div className="lg:bg-gradient-to-t lg:from-main-blue lg:via-white lg:to-white lg:!pb-8">
           <div
             className="hidden lg:block relative w-full lg:!mt-16 h-[660px]
-          w-full !mx-auto overflow-hidden"
+            w-full !mx-auto overflow-hidden"
             style={{
               boxShadow: "0px 4px 4px rgba(0,0,0,0.3)",
             }}
@@ -871,11 +882,13 @@ function LandingPage() {
               </h2>
 
               <div className="!mt-12 flex justify-center items-center gap-x-16 relative">
+                {/* the line between boxes */}
                 <div
                   className="w-[100px] border-t-[1px] border-[#BABABA] absolute top-1/2
                   left-1/2 -translate-x-1/2 translate-y-1/2 !z-[-10]"
                 ></div>
 
+                {/* left box */}
                 <div className="flex flex-col justify-between items-center bg-white">
                   <div
                     className="border-[1px] border-[#E3E3E3] !py-8 !px-6 w-[500px] h-[400px]
@@ -942,6 +955,7 @@ function LandingPage() {
                   </div>
                 </div>
 
+                {/* right box */}
                 <div className="flex flex-col justify-between items-center bg-white">
                   <div
                     className="border-[1px] border-[#E3E3E3] !px-6 w-[500px]
@@ -996,7 +1010,7 @@ function LandingPage() {
 
       {/* Contact Us */}
       <div>
-        {/* for mobile */}
+        {/* contact us for mobile */}
         <div className="md:hidden !pb-12">
           <img src={team} alt="our team picture" className="w-full" />
 
@@ -1061,7 +1075,7 @@ function LandingPage() {
           </div>
         </div>
 
-        {/* for tablet & laptop */}
+        {/* contact us for tablet & laptop */}
         <div className="hidden md:flex relative justify-between items-start">
           <div className="!pl-[5%]">
             <motion.div

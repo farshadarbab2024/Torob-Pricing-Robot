@@ -63,28 +63,29 @@ function DesktopPanel() {
     }
   };
 
-  const getDefaultKey = ():string => {
+  const getDefaultKey = (): string => {
     const u = new URL(window.location.href);
     const parts = u.pathname.split("/").filter(Boolean); // ["panel","logs"]
-    const last:string = parts.pop() ?? ""; // "logs"
-    return last ;
+    const last: string = parts.pop() ?? ""; // "logs"
+    return last;
   };
-
-  
-
 
   return (
     <div className="flex justify-between">
       {contextHolder}
+
+      {/* the left menu */}
       <div
         className="bg-[#300000] w-[220px] h-screen fixed left-0 top-0
         z-20"
       >
+        {/* Logo */}
         <img
           src={logo}
           alt="logo"
           className="!mx-auto block !mt-12 w-[50px] h-[50px]"
         />
+
         <Menu
           theme="dark"
           className="!bg-[#300000] !mt-12 !px-4"

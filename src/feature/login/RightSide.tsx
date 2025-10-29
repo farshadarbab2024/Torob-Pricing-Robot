@@ -18,6 +18,7 @@ function RightSide() {
         absolute top-1/3 right-1/2 translate-x-1/2
         -translate-y-1/2"
       >
+        {/* typing text */}
         <div className="hidden md:block">
           <TypeAnimation
             sequence={[
@@ -39,6 +40,7 @@ function RightSide() {
             repeat={Infinity}
           />
         </div>
+
         <button
           onClick={() => navigator("/signup")}
           className="text-white border-white rounded-full !mx-auto

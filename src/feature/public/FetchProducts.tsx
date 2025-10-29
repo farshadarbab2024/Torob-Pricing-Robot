@@ -1,7 +1,7 @@
 import { Progress } from "antd";
 import React, { useEffect, useState } from "react";
 function FetchProduct({fetchingStatus, setFetchingStatus}: {fetchingStatus:any, setFetchingStatus:any}) {
-  console.log("fetchingStatus: " + fetchingStatus) ; //ntdelete
+  
   if(fetchingStatus == "noStatus"){
     return <div></div> ;
   }
@@ -28,6 +28,7 @@ function FetchProduct({fetchingStatus, setFetchingStatus}: {fetchingStatus:any, 
         boxShadow: "0px 0px 5px rgba(0,0,0,0.4)",
       }}
     >
+      {/* status text */}
       <p
         className=" transition duration-1000 overflow-x-hidden
             whitespace-nowrap"

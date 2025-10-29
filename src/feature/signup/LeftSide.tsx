@@ -19,6 +19,7 @@ function LeftSide() {
         absolute top-1/3 right-1/2 translate-x-1/2
         -translate-y-1/2"
       >
+        {/* Typing text */}
         <div className="hidden md:block">
           <TypeAnimation
             sequence={[

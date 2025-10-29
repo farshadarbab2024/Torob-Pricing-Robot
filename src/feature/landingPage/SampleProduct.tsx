@@ -28,23 +28,25 @@ function SampleProduct() {
   const [messageApi, contextHolder] = message.useMessage();
   const [isStatusLoading, setIsStatusLoading] = useState(false);
   const [lineHeight, setLineHeight] = useState(0);
-  const [priceChangeStatus, setPriceChangeStatus] = useState<"no_status" | "success" | "failed">("no_status") ; 
-  const [timeDivShow, setTimeDivShow] = useState(false) ; 
+  const [priceChangeStatus, setPriceChangeStatus] = useState<
+    "no_status" | "success" | "failed"
+  >("no_status");
+  const [timeDivShow, setTimeDivShow] = useState(false);
 
   useEffect(() => {
     if (lineHeight >= 45) {
-      setPriceChangeStatus("success") ;
+      setPriceChangeStatus("success");
     }
     const timer = setTimeout(() => {
-      setPriceChangeStatus("no_status")
+      setPriceChangeStatus("no_status");
       setLineHeight((prev) => prev + 1);
     }, 1000);
 
-    if(lineHeight >= 45){
+    if (lineHeight >= 45) {
       setLineHeight(0);
     }
 
-    return () => clearTimeout(timer) ; 
+    return () => clearTimeout(timer);
   }, [lineHeight]);
 
   const handleMinPriceEdit = () => {
@@ -97,33 +99,45 @@ function SampleProduct() {
     >
       {contextHolder}
 
+      {/* blue, vertically filling up rectangle */}
       <div
         className="absolute left-0 top-0 bg-main-blue transition duration-1000 w-[3px] z-30"
         style={{
           height: lineHeight * 4,
-          backgroundColor: priceChangeStatus == "no_status" ? "var(--main-blue)" : priceChangeStatus == "success" ? "var(--success-green)" : "var(--main-red)", 
+          backgroundColor:
+            priceChangeStatus == "no_status"
+              ? "var(--main-blue)"
+              : priceChangeStatus == "success"
+              ? "var(--success-green)"
+              : "var(--main-red)",
+        }}
+      ></div>
+
+      {/* The semicircle that appears when hovering */}
+      <div
+        className="absolute top-0 left-0 h-full rounded-full bg-white/95 w-[180px]
+       overflow-x-hidden transition duration-500"
+        style={{
+          transform: timeDivShow ? "translateX(-50%)" : "translateX(-100%)",
         }}
       >
-      </div>
-
-      <div
-      className="absolute top-0 left-0 h-full rounded-full bg-white/95 w-[180px]
-       overflow-x-hidden transition duration-500"
-      style={{
-        transform: timeDivShow ? "translateX(-50%)" : "translateX(-100%)"
-      }}
-      >
         <span
-        className="text-[25px] font-medium block absolute left-[75%] top-1/2
+          className="text-[25px] font-medium block absolute left-[75%] top-1/2
         -translate-x-1/2 -translate-y-1/2 text-main-blue"
         >
-          {priceChangeStatus == "no_status" ? (45 - lineHeight) : priceChangeStatus == "success" ? <CheckOutlined className="text-success-green" /> : <RxCross2 />}
+          {priceChangeStatus == "no_status" ? (
+            45 - lineHeight
+          ) : priceChangeStatus == "success" ? (
+            <CheckOutlined className="text-success-green" />
+          ) : (
+            <RxCross2 />
+          )}
         </span>
-        
       </div>
 
-
       <img src={product.image} alt="sample image" className="h-full" />
+
+      {/* Content of Product */}
       <div>
         <div className="font-bold text-[17px]">{product.title}</div>
 
@@ -209,6 +223,7 @@ function SampleProduct() {
         </div>
       </div>
 
+      {/* right blue and red square links */}
       <div
         className="absolute right-0 top-0 h-full w-[40px] flex flex-col justify-between
         rounded-tr rounded-br overflow-hidden"
