@@ -3,7 +3,9 @@
 This project helps online shops **keep their prices up-to-date automatically** based on other online shops' prices.  
 
 ![Signup Page](https://github.com/farshadarbab2024/price-automation-panel/blob/main/src/assets/screenshots/signup.png)  
+
 ![Landing Page](https://github.com/farshadarbab2024/price-automation-panel/blob/main/src/assets/screenshots/landing-page.png)
+
 ![Dashboard](https://github.com/farshadarbab2024/price-automation-panel/blob/main/src/assets/screenshots/dashboard.png)
 
 ---
