@@ -10,7 +10,7 @@ This project helps online shops **keep their prices up-to-date automatically** b
 
 ---
 
-# Technologies Used in This Project
+## Technologies Used in This Project
 - React
 - TypeScript
 - TailwindCSS
@@ -20,7 +20,7 @@ This project helps online shops **keep their prices up-to-date automatically** b
 - React-hook-form
 - Zod
 
-# What This Panel Does
+## What This Panel Does
 
 This panel allows users to **control the price automation robot** through a **user-friendly interface**.  
 > ⚠️ Note: This web application is still in testing and does **not** include an API service handler.  
