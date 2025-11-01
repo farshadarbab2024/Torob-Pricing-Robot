@@ -10,6 +10,16 @@ This project helps online shops **keep their prices up-to-date automatically** b
 
 ---
 
+# Technologies Used in This Project
+- React
+- TypeScript
+- TailwindCSS
+- Ant Design
+- Figma
+- Framer Motion
+- React-hook-form
+- Zod
+
 # What This Panel Does
 
 This panel allows users to **control the price automation robot** through a **user-friendly interface**.  
